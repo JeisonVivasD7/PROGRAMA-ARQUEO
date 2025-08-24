@@ -1,2 +1,2 @@
 # PROGRAMA-ARQUEO
-Un programa en desarrollo, destinado a aquellas Pymes en crecimiento 
+El programa posee un apartado de Logueo incial que principalmente identificará al encargado de realizar el proceso, seguido se hallarán menús donde se implementarán las funciones en cuestión, en el momento se encuentra una plantilla que posee medios de pago, un cálculo de métodos de efectivo, un espacio para calcular el dinero en efectivo, un calculo en total y un "total sistema" que en principio es el cálulo de la venta que el usuario deberá suministrar para hacer el respectivo totalizado; el objetivo es llevar esta plantilla y asi mismo crear un reporte en PDF e implementar su impresión y consulta de anteriores plantillas, esto con la finalidad de mejorar procesos administrativos.
