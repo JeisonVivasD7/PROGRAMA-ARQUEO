@@ -1,0 +1,257 @@
+﻿<UserControl x:Class="ARQUEO.NuevoArqueo"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ARQUEO"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <!-- Propiedades de los Texblock y textbox
+    para que no se vean una mrd
+    y no tener un mierdero-->
+    <UserControl.Resources>
+        <Style x:Key="TextBlockOrganizacion" 
+               TargetType="TextBlock">
+            <Setter Property="FontSize" Value="12"></Setter>
+            <Setter Property="FontWeight" Value="Bold"></Setter>
+            <Setter Property="VerticalAlignment" Value="Center"></Setter>
+            <Setter Property="Foreground" Value="DimGray"></Setter>
+            <Setter Property="HorizontalAlignment" Value="Center"></Setter>
+            <Setter Property="Margin" Value="0,8,0,8"></Setter>
+        </Style>
+        <Style x:Key="Organizacióntextbox"
+               TargetType="TextBox">            
+            <Setter Property="FontSize" Value="12"></Setter>
+            <Setter Property="FontWeight" Value="Bold"></Setter>
+            <Setter Property="VerticalAlignment" Value="Center"></Setter>
+            <Setter Property="Foreground" Value="DimGray"></Setter>
+            <Setter Property="HorizontalAlignment" Value="Center"></Setter>
+            <Setter Property="Margin" Value="0,8,0,8"></Setter>
+            <Setter Property="BorderThickness" Value="1"></Setter>
+            <Setter Property="BorderBrush" Value="DimGray"></Setter>
+            <Setter Property="Width" Value="118"></Setter>
+            <Setter Property="HorizontalAlignment" Value="Right"></Setter>
+            <Setter Property="Margin" Value="0,8,0,7"></Setter>
+            <Setter Property="TextAlignment" Value="Center"></Setter>
+            <EventSetter Event="LostFocus" Handler="FormatoMoneda"> </EventSetter>
+        </Style>
+    </UserControl.Resources>
+    <!-- Declaro 2 Grids, y dentro de dos grids, meto dos columnas -->
+    <Grid Background="White">
+        <!-- Aqui se declararon 2 columnas -->
+        <Grid Margin="13">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="12" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <!-- Columnas: -->
+            <Grid Grid.Column="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="180"></ColumnDefinition>
+                    <ColumnDefinition Width="80"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <StackPanel Grid.Column="0">
+                    <TextBlock Text="MÉTODO DE PAGO" FontSize="16" 
+                               Style="{StaticResource TextBlockOrganizacion}"></TextBlock>
+                    <TextBlock Text="MASTERCARD" 
+                               Style="{StaticResource TextBlockOrganizacion}"></TextBlock>
+                    <TextBlock Text="VISA" 
+                               Style="{StaticResource TextBlockOrganizacion}"></TextBlock>
+                    <TextBlock Text="DINNERS CLUB" 
+                               Style="{StaticResource TextBlockOrganizacion}"></TextBlock>
+                    <TextBlock Text="AMERICAN EXPRESS" 
+                               Style="{StaticResource TextBlockOrganizacion}"></TextBlock>
+                    <TextBlock Text="QR-TRASNFERENCIA" 
+                               Style="{StaticResource TextBlockOrganizacion}"></TextBlock>
+                    <TextBlock Text="EFECTIVO" 
+                               Style="{StaticResource TextBlockOrganizacion}"></TextBlock>
+                    <TextBlock Text="TOTAL MONEDAS" 
+                               Style="{StaticResource TextBlockOrganizacion}"></TextBlock>
+                    <TextBlock Text="TOTAL BILLETES" 
+                               Style="{StaticResource TextBlockOrganizacion}"></TextBlock>
+                    <TextBlock Text="TOTAL" FontWeight="ExtraBlack" 
+                               Style="{StaticResource TextBlockOrganizacion}"></TextBlock>
+                    <TextBlock Text="TOTAL SISTEMA" FontWeight="ExtraBlack" 
+                               Style="{StaticResource TextBlockOrganizacion}"></TextBlock>
+                    <TextBlock Text="DIFERENCIAS" FontWeight="ExtraBlack"
+                               Style="{StaticResource TextBlockOrganizacion}"></TextBlock>
+                    <TextBlock Text="TOTAL EFECTIVO" FontWeight="ExtraBlack"
+                               Style="{StaticResource TextBlockOrganizacion}"></TextBlock>
+                </StackPanel>
+                <StackPanel Grid.Column="1">
+                    <TextBlock Text="MONEDA" FontSize="16" 
+                               Style="{StaticResource TextBlockOrganizacion}"></TextBlock>
+                    <TextBlock Text="COP $    -" 
+                               Style="{StaticResource TextBlockOrganizacion}"></TextBlock>
+                    <TextBlock Text="COP $    -" 
+                               Style="{StaticResource TextBlockOrganizacion}"></TextBlock>
+                    <TextBlock Text="COP $    -" 
+                               Style="{StaticResource TextBlockOrganizacion}"></TextBlock>
+                    <TextBlock Text="COP $    -" 
+                               Style="{StaticResource TextBlockOrganizacion}"></TextBlock>
+                    <TextBlock Text="COP $    -" 
+                               Style="{StaticResource TextBlockOrganizacion}"></TextBlock>
+                    <TextBlock Text="COP $    -" 
+                               Style="{StaticResource TextBlockOrganizacion}"></TextBlock>
+                    <TextBlock Text="COP $    -" 
+                               Style="{StaticResource TextBlockOrganizacion}"></TextBlock>
+                    <TextBlock Text="COP $    -" 
+                               Style="{StaticResource TextBlockOrganizacion}"></TextBlock>
+                    <TextBlock Text="COP $    -" 
+                               Style="{StaticResource TextBlockOrganizacion}"></TextBlock>
+                    <TextBlock Text="COP $    -" 
+                               Style="{StaticResource TextBlockOrganizacion}"></TextBlock>
+                    <TextBlock Text="COP $    -" 
+                               Style="{StaticResource TextBlockOrganizacion}"></TextBlock>
+                    <TextBlock Text="COP $    -" 
+                               Style="{StaticResource TextBlockOrganizacion}"></TextBlock>
+
+                </StackPanel>
+                
+                <StackPanel Grid.Column="2">
+                    <TextBlock HorizontalAlignment="Center"
+                               Text="ARQUEO" FontSize="16" 
+                               Style="{StaticResource TextBlockOrganizacion}"></TextBlock>
+                    <TextBox x:Name="MASTERCARD" TextChanged = "suma_TextChanged" BorderThickness="0,0,0,1" Style="{StaticResource Organizacióntextbox}"></TextBox>
+                    <TextBox x:Name="VISA" TextChanged = "suma_TextChanged" BorderThickness="0,0,0,1" Style="{StaticResource Organizacióntextbox}"></TextBox>
+                    <TextBox x:Name="DINNERS" TextChanged = "suma_TextChanged" BorderThickness="0,0,0,1" Style="{StaticResource Organizacióntextbox}"></TextBox>
+                    <TextBox x:Name="AMERICAN" TextChanged = "suma_TextChanged" BorderThickness="0,0,0,1" Style="{StaticResource Organizacióntextbox}"></TextBox>
+                    <TextBox x:Name="QR" TextChanged = "suma_TextChanged" BorderThickness="0,0,0,1" Style="{StaticResource Organizacióntextbox}"></TextBox>
+                    <TextBox x:Name="EFECTIVO" IsEnabled="False" TextChanged = "suma_TextChanged" BorderThickness="0,0,0,1" Style="{StaticResource Organizacióntextbox}"></TextBox>
+                    <TextBox x:Name="TOTAL_MONEDAS"  IsEnabled="False" BorderThickness="0,0,0,1" Style="{StaticResource Organizacióntextbox}"></TextBox>
+                    <TextBox x:Name="TOTAL_BILLETES" IsEnabled="False" BorderThickness="0,0,0,1" Style="{StaticResource Organizacióntextbox}"></TextBox>
+                    <TextBox x:Name="TOTAL" IsEnabled="False" BorderThickness="0,0,0,1" Style="{StaticResource Organizacióntextbox}"></TextBox>
+                    <TextBox x:Name="TOTAL_SISTEMA" BorderThickness="0,0,0,1" Style="{StaticResource Organizacióntextbox}"></TextBox>
+                    <TextBox x:Name="DIFERENCIAS" TextChanged = "suma_TextChanged" IsEnabled="False" BorderThickness="0,0,0,1" Style="{StaticResource Organizacióntextbox}"></TextBox>
+                    <TextBox x:Name="TOTAL_EFECTIVO" IsEnabled="False" BorderThickness="0,0,0,1" Style="{StaticResource Organizacióntextbox}"></TextBox>
+                </StackPanel>
+                
+            </Grid>     
+            <Grid Grid.Column="2">            
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="140"></ColumnDefinition>
+                    <ColumnDefinition Width="80"></ColumnDefinition>
+                    <ColumnDefinition Width="10"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                
+                <StackPanel Grid.Column="0">
+                    <TextBlock Text="VALOR MONEDA" FontSize="16" 
+                               Style="{StaticResource TextBlockOrganizacion}"></TextBlock>
+                    <TextBlock Text="COP $ 50" 
+                               Style="{StaticResource TextBlockOrganizacion}"></TextBlock>
+                    <TextBlock Text="COP $ 100" 
+                               Style="{StaticResource TextBlockOrganizacion}"></TextBlock>
+                    <TextBlock Text="COP $ 200" 
+                               Style="{StaticResource TextBlockOrganizacion}"></TextBlock>
+                    <TextBlock Text="COP $ 500" 
+                               Style="{StaticResource TextBlockOrganizacion}"></TextBlock>
+                    <TextBlock Text="COP $ 1,000" 
+                               Style="{StaticResource TextBlockOrganizacion}"></TextBlock>
+                    <TextBlock Text="COP $ 2,000" 
+                               Style="{StaticResource TextBlockOrganizacion}"></TextBlock>
+                    <TextBlock Text="COP $ 5,000" 
+                               Style="{StaticResource TextBlockOrganizacion}"></TextBlock>
+                    <TextBlock Text="COP $ 10,000" 
+                               Style="{StaticResource TextBlockOrganizacion}"></TextBlock>
+                    <TextBlock Text="COP $ 20,000" 
+                               Style="{StaticResource TextBlockOrganizacion}"></TextBlock>
+                    <TextBlock Text="COP $ 50,000" 
+                               Style="{StaticResource TextBlockOrganizacion}"></TextBlock>
+                    <TextBlock Text="COP $ 100,000" 
+                               Style="{StaticResource TextBlockOrganizacion}"></TextBlock>
+                    <Button Content="CALCULAR"
+                            Foreground="DimGray"
+                            Background="White"
+                            BorderBrush="Black"
+                            Height="30"
+                            FontWeight="UltraBlack"
+                            FontSize="16"
+                            Margin="3"
+                            Click="CalcularArqueo">
+                        
+                    </Button>
+
+                </StackPanel>
+                <StackPanel Grid.Column="1">
+                    <TextBlock Text="CANTIDAD" FontSize="16" 
+                               Style="{StaticResource TextBlockOrganizacion}"></TextBlock>
+
+                    <TextBox TextChanged = "suma_TextChanged" x:Name="moneda50" Width="60" HorizontalAlignment="Center" BorderThickness="0,0,0,1" Style="{StaticResource Organizacióntextbox}"></TextBox>
+                    <TextBox TextChanged = "suma_TextChanged" x:Name="moneda100"  Width="60" HorizontalAlignment="Center" BorderThickness="0,0,0,1" Style="{StaticResource Organizacióntextbox}"></TextBox>
+                    <TextBox TextChanged = "suma_TextChanged" x:Name="moneda200" Width="60" HorizontalAlignment="Center" BorderThickness="0,0,0,1" Style="{StaticResource Organizacióntextbox}"></TextBox>
+                    <TextBox TextChanged = "suma_TextChanged" x:Name="moneda500" Width="60" HorizontalAlignment="Center" BorderThickness="0,0,0,1" Style="{StaticResource Organizacióntextbox}"></TextBox>
+                    <TextBox TextChanged = "suma_TextChanged" x:Name="moneda1000" Width="60" HorizontalAlignment="Center" BorderThickness="0,0,0,1" Style="{StaticResource Organizacióntextbox}"></TextBox>
+                    <TextBox TextChanged = "suma_TextChanged" x:Name="billete2000" Width="60" HorizontalAlignment="Center" BorderThickness="0,0,0,1" Style="{StaticResource Organizacióntextbox}"></TextBox>
+                    <TextBox TextChanged = "suma_TextChanged" x:Name="billete5000" Width="60" HorizontalAlignment="Center" BorderThickness="0,0,0,1" Style="{StaticResource Organizacióntextbox}"></TextBox>
+                    <TextBox TextChanged = "suma_TextChanged" x:Name="billete10000" Width="60" HorizontalAlignment="Center" BorderThickness="0,0,0,1" Style="{StaticResource Organizacióntextbox}"></TextBox>
+                    <TextBox TextChanged = "suma_TextChanged" x:Name="billete20000" Width="60" HorizontalAlignment="Center" BorderThickness="0,0,0,1" Style="{StaticResource Organizacióntextbox}"></TextBox>
+                    <TextBox TextChanged = "suma_TextChanged" x:Name="billete50000" Width="60" HorizontalAlignment="Center" BorderThickness="0,0,0,1" Style="{StaticResource Organizacióntextbox}"></TextBox>
+                    <TextBox TextChanged = "suma_TextChanged" x:Name="billete100000" Width="60" HorizontalAlignment="Center" BorderThickness="0,0,0,1" Style="{StaticResource Organizacióntextbox}"></TextBox>
+                    <TextBlock Text="X TOTAL" FontSize="16" 
+             Style="{StaticResource TextBlockOrganizacion}"></TextBlock>
+
+                </StackPanel>
+                <StackPanel Grid.Column="2">
+                    <TextBlock Text="" FontSize="16" 
+             Style="{StaticResource TextBlockOrganizacion}"></TextBlock>
+                    <TextBlock Text="$" 
+             Style="{StaticResource TextBlockOrganizacion}"></TextBlock>
+                    <TextBlock Text="$" 
+             Style="{StaticResource TextBlockOrganizacion}"></TextBlock>
+                    <TextBlock Text="$" 
+             Style="{StaticResource TextBlockOrganizacion}"></TextBlock>
+                    <TextBlock Text="$" 
+             Style="{StaticResource TextBlockOrganizacion}"></TextBlock>
+                    <TextBlock Text="$" 
+             Style="{StaticResource TextBlockOrganizacion}"></TextBlock>
+                    <TextBlock Text="$" 
+             Style="{StaticResource TextBlockOrganizacion}"></TextBlock>
+                    <TextBlock Text="$" 
+             Style="{StaticResource TextBlockOrganizacion}"></TextBlock>
+                    <TextBlock Text="$" 
+             Style="{StaticResource TextBlockOrganizacion}"></TextBlock>
+                    <TextBlock Text="$" 
+             Style="{StaticResource TextBlockOrganizacion}"></TextBlock>
+                    <TextBlock Text="$" 
+             Style="{StaticResource TextBlockOrganizacion}"></TextBlock>
+                    <TextBlock Text="$" 
+             Style="{StaticResource TextBlockOrganizacion}"></TextBlock>
+                    <TextBlock Text="$" 
+             Style="{StaticResource TextBlockOrganizacion}"></TextBlock>
+
+                </StackPanel>
+                <StackPanel Grid.Column="3">
+                    <TextBlock Text="TOTAL" FontSize="16" 
+                               Style="{StaticResource TextBlockOrganizacion}"></TextBlock>
+
+                    <TextBox x:Name="moneda50total" IsEnabled="False" Width="120" HorizontalAlignment="Center" BorderThickness="0,0,0,1" Style="{StaticResource Organizacióntextbox}"></TextBox>
+                    <TextBox x:Name="moneda100total" IsEnabled="False" Width="120" HorizontalAlignment="Center" BorderThickness="0,0,0,1" Style="{StaticResource Organizacióntextbox}"></TextBox>
+                    <TextBox x:Name="moneda200total" IsEnabled="False" Width="120" HorizontalAlignment="Center" BorderThickness="0,0,0,1" Style="{StaticResource Organizacióntextbox}"></TextBox>
+                    <TextBox x:Name="moneda500total" IsEnabled="False" Width="120" HorizontalAlignment="Center" BorderThickness="0,0,0,1" Style="{StaticResource Organizacióntextbox}"></TextBox>
+                    <TextBox x:Name="moneda1000total" IsEnabled="False" Width="120" HorizontalAlignment="Center" BorderThickness="0,0,0,1" Style="{StaticResource Organizacióntextbox}"></TextBox>
+                    <TextBox x:Name="billete2000total" IsEnabled="False" Width="120" HorizontalAlignment="Center" BorderThickness="0,0,0,1" Style="{StaticResource Organizacióntextbox}"></TextBox>
+                    <TextBox x:Name="billete5000total" IsEnabled="False" Width="120" HorizontalAlignment="Center" BorderThickness="0,0,0,1" Style="{StaticResource Organizacióntextbox}"></TextBox>
+                    <TextBox x:Name="billete10000total" IsEnabled="False" Width="120" HorizontalAlignment="Center" BorderThickness="0,0,0,1" Style="{StaticResource Organizacióntextbox}"></TextBox>
+                    <TextBox x:Name="billete20000total" IsEnabled="False" Width="120" HorizontalAlignment="Center" BorderThickness="0,0,0,1" Style="{StaticResource Organizacióntextbox}"></TextBox>
+                    <TextBox x:Name="billete50000total" IsEnabled="False" Width="120" HorizontalAlignment="Center" BorderThickness="0,0,0,1" Style="{StaticResource Organizacióntextbox}"></TextBox>
+                    <TextBox x:Name="billete100000total" IsEnabled="False" Width="120" HorizontalAlignment="Center" BorderThickness="0,0,0,1" Style="{StaticResource Organizacióntextbox}"></TextBox>
+                    <TextBox x:Name="GRANTOTAL" Width="120" IsEnabled="False" HorizontalAlignment="Center" BorderThickness="0,0,0,1" Style="{StaticResource Organizacióntextbox}"></TextBox>
+
+
+                </StackPanel>
+
+
+            </Grid>
+            
+
+            <!-- Aquí se declaro un borde para "estilo" xd -->
+        </Grid>
+        <Border BorderBrush="DarkGray" BorderThickness="7"></Border>
+
+    </Grid>
+
+</UserControl>

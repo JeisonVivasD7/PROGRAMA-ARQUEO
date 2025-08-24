@@ -1,0 +1,86 @@
+﻿<Window x:Class="ARQUEO.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ARQUEO"
+        mc:Ignorable="d"
+        Title="Arqueo" Height="550" Width="800"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize">
+    <Grid>
+
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0" Grid.Column="1" Background="CornflowerBlue">
+            <Menu Background="WhiteSmoke" Grid.Row="0">
+                <MenuItem Header="Nuevo Arqueo"
+              Foreground="Black"
+                           FontWeight="Bold"
+              VerticalAlignment="Center"
+              HorizontalAlignment="Center"
+              Margin="0,5,0,0"
+              Click="CambiarColorContenidoYActivarBotones"                          
+              x:Name="BotonNuevoArqueo">
+                    <MenuItem Click="CrearPlantillaArqueo" Background="CornflowerBlue" Foreground="White" Header="Crear nuevo Arqueo"></MenuItem>
+                </MenuItem>
+
+                <MenuItem Header="Guardar"
+             Foreground="Black"
+                           FontWeight="Bold"
+              VerticalAlignment="Center"
+              HorizontalAlignment="Center"
+              Margin="0,5,0,0"
+                          x:Name="botonGuardar"
+                          IsEnabled="False">
+                    <MenuItem Background="CornflowerBlue" Foreground="White" Header=".PDF"></MenuItem>
+
+                </MenuItem>
+
+                <MenuItem Header="Imprimir"
+              Foreground="Black"
+                           FontWeight="Bold"
+              VerticalAlignment="Center"
+              HorizontalAlignment="Center"
+              Margin="0,5,0,0" x:Name="BotonImprimir"
+                          IsEnabled="False">
+                    <MenuItem Background="CornflowerBlue" Foreground="White" Header="Impresora"></MenuItem>
+
+                </MenuItem>
+
+                <MenuItem Header="Consultar"
+              Foreground="Black"
+                           FontWeight="Bold"
+              VerticalAlignment="Center"
+              HorizontalAlignment="Center"
+              Margin="0,5,0,0"
+                          x:Name="BotonConsultar">
+                    <MenuItem Background="CornflowerBlue" Foreground="White" Header="Arqueos anteriores"></MenuItem>
+
+                </MenuItem>
+                <MenuItem Header="Ayuda"
+                          Foreground="Black"
+                           FontWeight="Bold"
+                          VerticalAlignment="Center"
+                          HorizontalAlignment="Center"
+                          Margin="0,5,0,0" 
+                          x:Name="BotonAyuda">
+                    <MenuItem Background="CornflowerBlue" Foreground="White" Header="Autoria: Jeison David"></MenuItem>
+                    <MenuItem Background="CornflowerBlue" Foreground="White" Header="Contacto: +(57)3108164169"></MenuItem>
+                </MenuItem>
+            </Menu>
+        </Grid>
+
+        <Grid Grid.Row="1" Grid.Column="0" Background="WhiteSmoke" Name="Contenido">
+            <Label Content="SISTEMA DE ARQUEO " FontSize="80" FontFamily="Cambria" FontStyle="Oblique" FontStretch="ExtraCondensed" Height="120" Foreground="Silver"></Label>
+            <Border BorderBrush="DarkGray" BorderThickness="4" Padding="2"></Border>
+            <ContentControl x:Name="ContenidoControl"></ContentControl>
+
+        </Grid>
+    </Grid>
+
+</Window>
